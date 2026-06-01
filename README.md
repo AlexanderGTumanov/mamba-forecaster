@@ -1,1 +1,1 @@
-# mamba-forecaster
+# Beating DLinear with a Mamba forecaster
