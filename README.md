@@ -16,3 +16,19 @@ Using this model makes it possible to beat DLinear even on the limited hardware 
 - Implements DLinear: a per-channel linear projection from context window to forecast horizon
 - Implements a Mamba-style SSM from scratch, along with RevIN normaliztion layer.
 - Trains both models at various benchmark horizon settings and compares their MSE losses on validation and test sets.
+
+---
+
+## Project structure
+
+The project is organized into several main directories:
+
+- `/notebook` contains a Jupyter notebook with model training and performance comparisons.
+- `/src` contains the core Python code:
+  - `utils.py` implements the Mamba model from scratch, along with DLinear, RevIN, dataset utilities, and the training loop.
+- `/model` contains pretrained models for the three horizon configurations considered in the notebook. Each subdirectory contains `DLinear.pt`, `mamba.pt`, and `revin.pt`:
+  - `/336-96`: `L = 336, H = 96`
+  - `/336-336`: `L = 336, H = 336`
+  - `/96-336`: `L = 96, H = 336`
+
+---
