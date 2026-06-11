@@ -183,7 +183,7 @@ def prepare_dataloaders(df, L, H, batch_size = 32, valid_len = 0, test_len = 0, 
     return train_loader, valid_loader, test_loader
 
 def evaluate(model, loader, revin = None):
-    device   = next(model.parameters()).device
+    device = next(model.parameters()).device
     training = model.training
     model.eval()
     if revin is not None:
