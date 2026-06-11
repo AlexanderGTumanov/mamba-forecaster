@@ -6,7 +6,7 @@ A well-known result in time series forecasting is that DLinear, a single linear 
 
 State space models (SSMs) offer a valuable alternative. In particular, the Mamba model family (Gu and Dao, 2023, 2024) is a general-purpose sequence model that has shown strong results on time series forecasting. Similar to the old RNN and LSTM architectures, they maintain a hidden state that evolves over time, but make this state transitions input-dependent, so the model learns what to remember and what to discard at each step.
 
-Using this model makes it possible to beat DLinear even on a limited hardware of a personal laptop. This project implements a Mamba-style SSM from scratch and trains it to outperform DLinear on the ETTm2 benchmark (Electricity Transformer Temperature), running entirely on a 32 GB MacBook M1. The model succeeds at long forecast horizons (L = H = 336 and L = H = 720), where nonlinear dynamics give the model a genuine advantage over linear extrapolation.
+Using this model makes it possible to beat DLinear even on the limited hardware of a personal laptop. This project implements a Mamba-style SSM from scratch and trains it on the ETTm2 benchmark (Electricity Transformer Temperature), running entirely on a 32 GB MacBook M1. Across three forecast horizon configurations, the model comfortably outperforms DLinear at long horizons (`L = 96, H = 336`), matches it at medium ones (`L = H = 336`), and comes close at short ones (`L = 336, H = 96`) where linear baselines are hardest to beat.
 
 ---
  
